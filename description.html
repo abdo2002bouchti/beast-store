@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="descriptions.css" >
+<script src="https://kit.fontawesome.com/342d0ab88b.js" crossorigin="anonymous"></script>
+<script>
+
+
+
+
+ function selectColor(color) {
+    // Set the selected color in the hidden input field
+    document.getElementById("selectedColor").value = color;
+  }
+  function selectSize(size) {
+    // Set the selected color in the hidden input field
+    document.getElementById("selectedSize").value = size;
+  }
+
+  // Function to send the WhatsApp message
+  function sendToWhatsApp() {
+    // Gather the necessary information (e.g., product details)
+    var productName = "Chaussures deuxieme choix sportif ";
+    var productPrice = "199 DH";
+
+    // Get the selected color from the hidden input field
+    var selectedColor = document.getElementById("selectedColor").value;
+     var selectedSize = document.getElementById("selectedSize").value;
+    // Construct the message with the gathered information, color, and size
+    var message = "I'm interested in buying " + productName + " in " + selectedColor + "      " + selectedSize + " color and size " + selectedSize + " for " + productPrice + ". Please provide more details.";
+
+    // Encode the message for use in the URL
+    var encodedMessage = encodeURIComponent(message);
+
+    // Open WhatsApp with the pre-filled message
+    window.open("https://wa.me/qr/UC7AF7VLO4V4H1?text=" + encodedMessage);
+  }
+</script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector(".zoom-container");
+      const image = document.querySelector(".imaga-hid");
+
+      container.addEventListener("mousemove", (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        image.style.transformOrigin = `${x}% ${y}%`;
+        image.style.transform = "scale(2)";
+      });
+
+      container.addEventListener("mouseleave", () => {
+        image.style.transformOrigin = "center center";
+        image.style.transform = "scale(1)";
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.querySelector(".imaga-hid");
+      const smallImages = document.querySelectorAll(".image-list li img");
+
+      smallImages.forEach((image) => {
+        image.addEventListener("click", () => {
+          const newImageSrc = image.getAttribute("src");
+          mainImage.setAttribute("src", newImageSrc);
+        });
+      });
+    });
+  </script>
+
+</head>
+<body>
+
+<div class="cards">
+
+
+<div class="element"></div>
+<div class="grand-card">
+
+
+    <div class="zoom-container">
+    <img src="images/sber.jpg" class="imaga-hid">
+    </div>
+
+
+<ul class="image-list">
+  <li><img src="images/sber.jpg" alt="Image 1"></li>
+    <li><img src="images/sber1.jpg" alt="Image 1"></li>
+    <li><img src="images/sber2.jpg" alt="Image 2" ></li>
+    <li><img src="images/sber3.jpg" alt="Image 3" ></li>
+    <!-- Add more list items with images as needed -->
+  </ul>
+</div>
+
+<!-- this  is the end -->
+<div class="text">
+<h1>chaussures  deuxieme choix sportif, SAYT RLAE </h1>
+<div>
+    <p id="price"><strong>Prix :  199 DH</strong>  
+        <span style="text-decoration:line-through;font-size:20px">299 DH</span>
+    </p>
+
+    
+</div>
+
+<h2 style="position:relative;top:-20px">Couleur :</h2>
+
+
+<ul class="image-list-second">
+  <li><img src="images/black.jpg" alt="Black" onclick="selectColor('Black')"></li>
+  <li><img src="images/gris.png" alt="Gray" onclick="selectColor('Gray')"></li>
+  <li><img src="images/blue_dark.png" alt="Dark Blue" onclick="selectColor('Dark Blue')"></li>
+  <!-- Add more list items with images as needed -->
+</ul>
+
+
+      <h2 style="position: relative;top:-40px">Taille :</h2>
+      <ul class="sizes" >
+          <li><button class="buttons" onclick="selectSize('42')">42</button></li>
+          <li><button class="buttons" onclick="selectSize('43')">43</button></li>
+          <li><button class="buttons" onclick="selectSize('44')">44</button></li>
+          
+      </ul>
+      <button class="glow-on-hover"><a href="https://wa.me/qr/UC7AF7VLO4V4H1" target="_blank" class="link">Chat with us on WhatsApp</a></button>
+
+</div>
+
+
+</div>
+</body>
+
+</html>

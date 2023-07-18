@@ -1,0 +1,209 @@
+<html lang="en">
+<head>
+    <style>
+body{
+    background-image: url(images/background_shop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  
+  
+   
+}
+
+        .animated-button1 {
+        background: linear-gradient(-30deg, black 50%, black 50%);
+        width: 170px;
+        height: 50px;
+        margin-right: 10px;
+        display: inline-block;
+        -webkit-transform: translate(0%, 0%);
+        transform: translate(0%, 0%);
+        overflow: hidden;
+        color: #ffffff;
+        font-size: 20px;
+        letter-spacing: 2.5px;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      }
+      
+      .animated-button1::before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #ad8585;
+        opacity: 0;
+        -webkit-transition: .2s opacity ease-in-out;
+        transition: .2s opacity ease-in-out;
+      }
+      
+      .animated-button1:hover::before {
+        opacity: 0.2;
+      }
+      
+      .animated-button1 span {
+        position: absolute;
+      }
+      
+      .animated-button1 span:nth-child(1) {
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 2px;
+        
+        background: linear-gradient(to left, rgba(43, 8, 8, 0), #d9cd26);
+        -webkit-animation: 2s animateTop linear infinite;
+                animation: 2s animateTop linear infinite;
+      }
+      
+      @keyframes animateTop {
+        0% {
+          -webkit-transform: translateX(100%);
+                  transform: translateX(100%);
+        }
+        100% {
+          -webkit-transform: translateX(-100%);
+                  transform: translateX(-100%);
+        }
+      }
+      
+      .animated-button1 span:nth-child(2) {
+        top: 0px;
+        right: 0px;
+        height: 100%;
+        width: 2px;
+        background: -webkit-gradient(linear, left bottom, left top, from(rgba(43, 8, 8, 0)), to(#d9cd26));
+        background: linear-gradient(to top, rgba(43, 8, 8, 0), #d9cd26);
+        -webkit-animation: 2s animateRight linear -1s infinite;
+                animation: 2s animateRight linear -1s infinite;
+      }
+      
+      @keyframes animateRight {
+        0% {
+          -webkit-transform: translateY(100%);
+                  transform: translateY(100%);
+        }
+        100% {
+          -webkit-transform: translateY(-100%);
+                  transform: translateY(-100%);
+        }
+      }
+      
+      .animated-button1 span:nth-child(3) {
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 2px;
+        background: -webkit-gradient(linear, left top, right top, from(rgba(43, 8, 8, 0)), to(#d9cd26));
+        background: linear-gradient(to right, rgba(43, 8, 8, 0), #d9cd26);
+        -webkit-animation: 2s animateBottom linear infinite;
+                animation: 2s animateBottom linear infinite;
+      }
+      
+      @keyframes animateBottom {
+        0% {
+          -webkit-transform: translateX(-100%);
+                  transform: translateX(-100%);
+        }
+        100% {
+          -webkit-transform: translateX(100%);
+                  transform: translateX(100%);
+        }
+      }
+      
+      .animated-button1 span:nth-child(4) {
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 2px;
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(43, 8, 8, 0)), to(#c7c7c7));
+        background: linear-gradient(to bottom, rgba(43, 8, 8, 0), #f0e9e9);
+        -webkit-animation: 2s animateLeft linear -1s infinite;
+                animation: 2s animateLeft linear -1s infinite;
+      }
+      
+      @keyframes animateLeft {
+        0% {
+          -webkit-transform: translateY(-100%);
+                  transform: translateY(-100%);
+        }
+        100% {
+          -webkit-transform: translateY(100%);
+                  transform: translateY(100%);
+        }
+      }
+      </style>
+   
+<link rel="stylesheet" href="styles.css"></head>
+<script src="https://kit.fontawesome.com/342d0ab88b.js" crossorigin="anonymous"></script>
+<body>
+    <nav class="navbar">
+<div style="display: flex;align-items: center;">
+<img src="images/BEAST_mot.png" style="width: 120px;height: 115px;;" >
+<h1 style="color: rgb(0, 0, 0);">BEAST</h1>&nbsp;&nbsp;
+<h4 style="color: rgb(211, 177, 24);">STORE</h4>
+</div>
+<div class="navbar-buttons">
+
+<button class="animated-button1">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Homme</button>
+    <button class="animated-button1">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Femme</button>
+        <button class="animated-button1">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            contact</button>
+
+
+</div>
+
+<a href="panier.html" style="text-decoration: none;color: white;"> <button class="animated-button1" style="width: 100px;">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <i class="fa-solid fa-cart-shopping" style="position: relative;top: 10px;"></i> <p id="count">0</p></button></a>
+</nav>
+<div style="display: flex;justify-content: space-between;">
+    <div class="sidebar">
+        <div class="head"><p>Panier</p></div>
+      <div id="cartItem">
+      Votre panier est vide
+      </div>
+      
+      </div>
+      
+
+      <div class="resume">
+        <h4 style="text-decoration: none;">RÉSUMÉ DU PANIER
+        </h4>
+  <div class="foot">
+    <p >Total </p>
+    <h3 id="total">0.00 DH</h3>
+  </div>
+       
+<button style="margin-left: 30px;background-color: rgb(221, 224, 24);border-radius: 5px;width: 130px;height: 40px;">COMMANDER </button>
+      </div>
+    </div>
+    <script src="showcart.js">
+    </script>
+    <script src="addCart.js"></script>
+</body>
+</html>

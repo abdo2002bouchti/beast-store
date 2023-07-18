@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="descriptions.css" >
+<script src="https://kit.fontawesome.com/342d0ab88b.js" crossorigin="anonymous"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector(".zoom-container");
+      const image = document.querySelector(".imaga-hid");
+
+      container.addEventListener("mousemove", (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        image.style.transformOrigin = `${x}% ${y}%`;
+        image.style.transform = "scale(2)";
+      });
+
+      container.addEventListener("mouseleave", () => {
+        image.style.transformOrigin = "center center";
+        image.style.transform = "scale(1)";
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.querySelector(".imaga-hid");
+      const smallImages = document.querySelectorAll(".image-list li img");
+
+      smallImages.forEach((image) => {
+        image.addEventListener("click", () => {
+          const newImageSrc = image.getAttribute("src");
+          mainImage.setAttribute("src", newImageSrc);
+        });
+      });
+    });
+  </script>
+
+<style>
+  .glow-on-hover {
+    width: 320px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    top:50px;
+    left:60px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+</style>
+
+
+</head>
+<body>
+
+<div class="cards">
+
+
+<div class="element"></div>
+<div class="grand-card">
+
+
+    <div class="zoom-container">
+    <img src="images/bag.jpg" class="imaga-hid">
+    </div>
+
+
+<ul class="image-list">
+    <li><img src="images/bag.jpg" alt="Image 1"></li>
+    <li><img src="images/example.jpg" alt="Image 1"></li>
+    <li><img src="images/examle.jpg" alt="Image 2" ></li>
+    <li><img src="images/example1.jpg" alt="Image 3" ></li>
+    <!-- Add more list items with images as needed -->
+  </ul>
+</div>
+
+<!-- this  is the end -->
+<div class="text">
+<h1>Sac stylée d'épaule avec deux poches.</h1>
+<div>
+    <p id="price"><strong>Prix :  120 DH</strong>  
+        <span style="text-decoration:line-through;font-size:20px">229 DH</span>
+    </p>
+
+    
+</div>
+
+<h2>Couleur :</h2>
+
+
+    <ul class="image-list-second">
+        <li><img src="images/blue_dark.png" alt="Image 1"  class="second-images"></li>
+        <li><img src="images/gris.png" alt="Image 2" class="second-images"></li>
+        <li><img src="images/black.jpg" alt="Image 3"  class="second-images"></li>
+        <!-- Add more list items with images as needed -->
+      </ul>
+
+
+      <button class="glow-on-hover"><a href="https://wa.me/qr/UC7AF7VLO4V4H1" target="_blank" class="link">Chat with us on WhatsApp</a></button>
+
+</div>
+
+
+</div>
+</body>
+
+</html>
